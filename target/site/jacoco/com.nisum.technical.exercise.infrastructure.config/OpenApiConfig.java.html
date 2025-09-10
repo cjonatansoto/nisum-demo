@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>OpenApiConfig.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Nisum Technical Exercise</a> &gt; <a href="index.source.html" class="el_package">com.nisum.technical.exercise.infrastructure.config</a> &gt; <span class="el_source">OpenApiConfig.java</span></div><h1>OpenApiConfig.java</h1><pre class="source lang-java linenums">package com.nisum.technical.exercise.infrastructure.config;
+
+import io.swagger.v3.oas.models.Components;
+import io.swagger.v3.oas.models.OpenAPI;
+import io.swagger.v3.oas.models.info.Contact;
+import io.swagger.v3.oas.models.info.Info;
+import io.swagger.v3.oas.models.security.SecurityRequirement;
+import io.swagger.v3.oas.models.security.SecurityScheme;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+<span class="fc" id="L14">public class OpenApiConfig {</span>
+
+    @Value(&quot;${app.version:1.0}&quot;)
+    private String appVersion;
+
+    @Value(&quot;${app.title:Nisun API}&quot;)
+    private String apiName;
+
+    @Value(&quot;${app.description:Demo API de usuarios}&quot;)
+    private String apiDescripcion;
+
+    @Value(&quot;${app.contact.name:Líder Técnico}&quot;)
+    private String contactName;
+
+    @Value(&quot;${app.contact.email:contacto@email.com}&quot;)
+    private String contactEmail;
+
+    private static final String SECURITY_SCHEME_NAME = &quot;bearerAuth&quot;;
+
+    @Bean
+    public OpenAPI apiInfo() {
+<span class="fc" id="L35">        return new OpenAPI()</span>
+<span class="fc" id="L36">                .info(new Info()</span>
+<span class="fc" id="L37">                        .title(apiName)</span>
+<span class="fc" id="L38">                        .version(appVersion)</span>
+<span class="fc" id="L39">                        .description(apiDescripcion)</span>
+<span class="fc" id="L40">                        .contact(new Contact()</span>
+<span class="fc" id="L41">                                .name(contactName)</span>
+<span class="fc" id="L42">                                .email(contactEmail)))</span>
+<span class="fc" id="L43">                .addSecurityItem(new SecurityRequirement().addList(SECURITY_SCHEME_NAME))</span>
+<span class="fc" id="L44">                .components(new Components()</span>
+<span class="fc" id="L45">                        .addSecuritySchemes(SECURITY_SCHEME_NAME,</span>
+                                new SecurityScheme()
+<span class="fc" id="L47">                                        .name(SECURITY_SCHEME_NAME)</span>
+<span class="fc" id="L48">                                        .type(SecurityScheme.Type.HTTP)</span>
+<span class="fc" id="L49">                                        .scheme(&quot;bearer&quot;)</span>
+<span class="fc" id="L50">                                        .bearerFormat(&quot;JWT&quot;)</span>
+                        )
+                );
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.13.202504020838</span></div></body></html>

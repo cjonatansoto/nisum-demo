@@ -1,0 +1,14 @@
+com/nisum/technical/exercise/infrastructure/security/handlers/ForbiddenHandlerTest.class
+com/nisum/technical/exercise/NisumTechnicalExerciseApplicationTest.class
+com/nisum/technical/exercise/application/util/JwtUtilTest.class
+com/nisum/technical/exercise/domain/exception/RestExceptionHandlerTest.class
+com/nisum/technical/exercise/presentation/AccountControllerTest.class
+com/nisum/technical/exercise/presentation/UserControllerTest.class
+com/nisum/technical/exercise/infrastructure/security/handlers/UnauthorizedHandlerTest.class
+com/nisum/technical/exercise/domain/services/impl/AccountServiceImplTest.class
+com/nisum/technical/exercise/domain/exception/CustomUserDetailsServiceTest.class
+com/nisum/technical/exercise/application/mapper/UserMapperTest.class
+com/nisum/technical/exercise/domain/services/impl/UserServiceImplTest.class
+com/nisum/technical/exercise/application/util/TraceIdFilterTest.class
+com/nisum/technical/exercise/domain/exception/SimpleExceptionTest.class
+com/nisum/technical/exercise/infrastructure/security/JwtAuthenticationFilterTest.class

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CustomUserDetailsService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Nisum Technical Exercise</a> &gt; <a href="index.source.html" class="el_package">com.nisum.technical.exercise.domain.services.impl</a> &gt; <span class="el_source">CustomUserDetailsService.java</span></div><h1>CustomUserDetailsService.java</h1><pre class="source lang-java linenums">package com.nisum.technical.exercise.domain.services.impl;
+
+import com.nisum.technical.exercise.domain.exception.EnumError;
+import com.nisum.technical.exercise.domain.exception.SimpleException;
+import com.nisum.technical.exercise.infrastructure.repository.UserRepository;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.stereotype.Service;
+
+@Service
+<span class="fc" id="L13">@RequiredArgsConstructor</span>
+<span class="fc" id="L14">@Slf4j</span>
+public class CustomUserDetailsService implements UserDetailsService {
+
+    private final UserRepository userRepository;
+
+    @Override
+    public UserDetails loadUserByUsername(String email) {
+<span class="fc" id="L21">        return userRepository.findByEmail(email)</span>
+<span class="fc" id="L22">                .orElseThrow(() -&gt; {</span>
+<span class="fc" id="L23">                    log.error(&quot;User not found in database [email={}]&quot;);</span>
+<span class="fc" id="L24">                    return new SimpleException(EnumError.NO_RESOURCE_FOUND);</span>
+                });
+    }
+
+
+}
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.13.202504020838</span></div></body></html>

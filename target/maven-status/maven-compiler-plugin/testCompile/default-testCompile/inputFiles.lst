@@ -1,0 +1,14 @@
+/Users/jsotoimio/Documents/nisum-demo/src/test/java/com/nisum/technical/exercise/domain/exception/SimpleExceptionTest.java
+/Users/jsotoimio/Documents/nisum-demo/src/test/java/com/nisum/technical/exercise/infrastructure/security/handlers/UnauthorizedHandlerTest.java
+/Users/jsotoimio/Documents/nisum-demo/src/test/java/com/nisum/technical/exercise/application/util/TraceIdFilterTest.java
+/Users/jsotoimio/Documents/nisum-demo/src/test/java/com/nisum/technical/exercise/domain/services/impl/UserServiceImplTest.java
+/Users/jsotoimio/Documents/nisum-demo/src/test/java/com/nisum/technical/exercise/infrastructure/security/JwtAuthenticationFilterTest.java
+/Users/jsotoimio/Documents/nisum-demo/src/test/java/com/nisum/technical/exercise/NisumTechnicalExerciseApplicationTests.java
+/Users/jsotoimio/Documents/nisum-demo/src/test/java/com/nisum/technical/exercise/domain/exception/CustomUserDetailsServiceTest.java
+/Users/jsotoimio/Documents/nisum-demo/src/test/java/com/nisum/technical/exercise/infrastructure/security/handlers/ForbiddenHandlerTest.java
+/Users/jsotoimio/Documents/nisum-demo/src/test/java/com/nisum/technical/exercise/domain/exception/RestExceptionHandlerTest.java
+/Users/jsotoimio/Documents/nisum-demo/src/test/java/com/nisum/technical/exercise/presentation/AccountControllerTest.java
+/Users/jsotoimio/Documents/nisum-demo/src/test/java/com/nisum/technical/exercise/application/util/JwtUtilTest.java
+/Users/jsotoimio/Documents/nisum-demo/src/test/java/com/nisum/technical/exercise/presentation/UserControllerTest.java
+/Users/jsotoimio/Documents/nisum-demo/src/test/java/com/nisum/technical/exercise/application/mapper/UserMapperTest.java
+/Users/jsotoimio/Documents/nisum-demo/src/test/java/com/nisum/technical/exercise/domain/services/impl/AccountServiceImplTest.java
